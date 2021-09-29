@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Insurance Predictor</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}" type="text/css">
+</head>
+<body>
+
+	<h1>Welcome to Insurance Predictor</h1>
+	<form action="#" method="POST" class="Submission-Form">
+	
+		<label>Age</label>
+		<input type="text" name="Age" maxlength="35" placeholder="Age" required>
+
+		<label>Sex</label>
+		<select name="Sex">
+				  <option value="Female">Female</option>
+				  <option value="Male">Male</option>
+		</select> 
+
+
+		<label>BMI</label>
+		<input type="text" name="BMI" maxlength="35" placeholder="BMI" required>
+
+		
+		<label>Children</label>
+        <input type="text" name="Children" maxlength="35" placeholder="Children" required>
+
+        
+		<label>Smoke</label>
+		<select name="Smoke">
+				  <option value="Yes">Yes</option>
+				  <option value="No">No</option>
+		</select> 
+
+
+        <label>Region</label>
+		<select name="Region">
+			<option value="northeast">northeast</option>
+			<option value="northwest">northwest</option>
+			<option value="southeast">southeast</option>
+			<option value="southwest">southwest</option>						
+  		</select><br>
+		
+		<input type="submit" value="Generate Premium" class="sbt_btn">
+
+
+	</form>
+	
+</body>
+</html>
