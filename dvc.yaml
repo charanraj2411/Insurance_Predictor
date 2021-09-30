@@ -20,11 +20,27 @@ stages:
     - data/processed/test_Insurance.csv 
   
 
+
   clean_data:
     cmd: python src/clean_data.py --config=params.yaml
     deps:
     - data/processed/train_Insurance.csv
-    - data/processed/test_Insurance.csv 
+    - data/processed/test_Insurance.csv
+    - src/clean_data.py
     outs:
     - data/cleaned/train_Insurance.csv
     - data/cleaned/test_Insurance.csv 
+  
+
+
+  train_and_evaluate:
+    cmd: python src/train_and_evaluate.py --config=params.yaml
+    deps:
+    - data/cleaned/train_Insurance.csv
+    - data/cleaned/test_Insurance.csv 
+    - src/train_and_evaluate.py
+    params:
+    - estimators.DecisionTreeRegressor.params.max_depth
+    - estimators.DecisionTreeRegressor.params.min_samples_split
+    outs:
+    - saved_models/model.joblib

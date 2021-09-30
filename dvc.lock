@@ -41,6 +41,9 @@ stages:
     - path: data/processed/train_Insurance.csv
       md5: 8f42dfa05f6e58e5a894c80d552e2bb6
       size: 49045
+    - path: src/clean_data.py
+      md5: fbd4674ce2ce86bad3b5f2c20debd535
+      size: 1545
     outs:
     - path: data/cleaned/test_Insurance.csv
       md5: 74340cf66e9088a876afb3e4bacdefa7
@@ -48,3 +51,19 @@ stages:
     - path: data/cleaned/train_Insurance.csv
       md5: 5a76480ae7e4b95ee9fa5af78591c981
       size: 32280
+  train_and_evaluate:
+    cmd: python src/train_and_evaluate.py --config=params.yaml
+    deps:
+    - path: data/cleaned/test_Insurance.csv
+      md5: 74340cf66e9088a876afb3e4bacdefa7
+      size: 1745
+    - path: data/cleaned/train_Insurance.csv
+      md5: 5a76480ae7e4b95ee9fa5af78591c981
+      size: 32280
+    - path: src/train_and_evaluate.py
+      md5: ace657a8d582d801d181993f353c0c94
+      size: 2112
+    params:
+      params.yaml:
+        estimators.DecisionTreeRegressor.params.max_depth: 5
+        estimators.DecisionTreeRegressor.params.min_samples_split: 20
