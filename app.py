@@ -1,14 +1,9 @@
 from flask import Flask,redirect,url_for,render_template,request
 import numpy as np
-from sklearn.preprocessing import StandardScaler
 import pickle
 from Validation import form_response
 
-
-sc=StandardScaler()
-
 app = Flask(__name__)
-
 
 # Pkl_Filename = "Pickle_RL_Model.pkl"
 # with open(Pkl_Filename, 'rb') as file:  

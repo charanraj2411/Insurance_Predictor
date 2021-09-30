@@ -8,9 +8,6 @@ text_cols_map = {
 
 text_cols = ['Sex','Smoke','Region']
 
-data_clean={}
-def validate_input(data_req):
-    pass
 
 def form_response(data_req):
     for col,val in data_req.items():
