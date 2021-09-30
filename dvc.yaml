@@ -42,5 +42,10 @@ stages:
     params:
     - estimators.DecisionTreeRegressor.params.max_depth
     - estimators.DecisionTreeRegressor.params.min_samples_split
+    metrics:
+    - report/scores.json:
+        cache: false
+    - report/params.json:
+        cache: false    
     outs:
     - saved_models/model.joblib

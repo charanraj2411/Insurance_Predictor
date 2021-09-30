@@ -61,9 +61,19 @@ stages:
       md5: 5a76480ae7e4b95ee9fa5af78591c981
       size: 32280
     - path: src/train_and_evaluate.py
-      md5: ace657a8d582d801d181993f353c0c94
-      size: 2112
+      md5: 10e60f1c3ac8555fc699ce6bd6cbe612
+      size: 2803
     params:
       params.yaml:
         estimators.DecisionTreeRegressor.params.max_depth: 5
         estimators.DecisionTreeRegressor.params.min_samples_split: 20
+    outs:
+    - path: report/params.json
+      md5: 12dfb44b63f9352dd9d5cd34844a7246
+      size: 54
+    - path: report/scores.json
+      md5: 517dd65c91f19cf72cc47b7d13fee2f6
+      size: 98
+    - path: saved_models/model.joblib
+      md5: 81011bdc882c0a384420e2354b13e01d
+      size: 4927

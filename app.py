@@ -10,9 +10,9 @@ sc=StandardScaler()
 app = Flask(__name__)
 
 
-Pkl_Filename = "Pickle_RL_Model.pkl"
-with open(Pkl_Filename, 'rb') as file:  
-    model = pickle.load(file)
+# Pkl_Filename = "Pickle_RL_Model.pkl"
+# with open(Pkl_Filename, 'rb') as file:  
+#     model = pickle.load(file)
 
 
 @app.route("/",methods=['POST','GET'])
