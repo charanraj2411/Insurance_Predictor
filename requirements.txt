@@ -1,3 +1,6 @@
+## local package install
+-e .
+## third party package
 flask
 numpy
 sklearn
@@ -6,3 +9,4 @@ dvc[gdrive]
 pandas
 pytest
 tox
+flake8
