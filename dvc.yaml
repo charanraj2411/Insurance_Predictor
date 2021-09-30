@@ -7,6 +7,8 @@ stages:
     - data_given/insurance.csv
     outs:
     - data/raw/insurance.csv
+
+
   
   split_data:
     cmd: python src/split_data.py --config=params.yaml
@@ -16,3 +18,13 @@ stages:
     outs:
     - data/processed/train_Insurance.csv
     - data/processed/test_Insurance.csv 
+  
+
+  clean_data:
+    cmd: python src/clean_data.py --config=params.yaml
+    deps:
+    - data/processed/train_Insurance.csv
+    - data/processed/test_Insurance.csv 
+    outs:
+    - data/cleaned/train_Insurance.csv
+    - data/cleaned/test_Insurance.csv 

@@ -32,3 +32,19 @@ stages:
     - path: data/processed/train_Insurance.csv
       md5: 8f42dfa05f6e58e5a894c80d552e2bb6
       size: 49045
+  clean_data:
+    cmd: python src/clean_data.py --config=params.yaml
+    deps:
+    - path: data/processed/test_Insurance.csv
+      md5: 61507a22a718a774addb4aa58e949468
+      size: 2634
+    - path: data/processed/train_Insurance.csv
+      md5: 8f42dfa05f6e58e5a894c80d552e2bb6
+      size: 49045
+    outs:
+    - path: data/cleaned/test_Insurance.csv
+      md5: 74340cf66e9088a876afb3e4bacdefa7
+      size: 1745
+    - path: data/cleaned/train_Insurance.csv
+      md5: 5a76480ae7e4b95ee9fa5af78591c981
+      size: 32280

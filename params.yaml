@@ -14,6 +14,10 @@ split_data:
   test_path: data/processed/test_insurance.csv
   test_size: 0.05
 
+clean_data:
+  train_path: data/cleaned/train_insurance.csv
+  test_path: data/cleaned/test_insurance.csv
+
 estimators:
   DecisionTreeRegressor:
     params:
