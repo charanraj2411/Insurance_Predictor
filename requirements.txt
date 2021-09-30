@@ -3,3 +3,4 @@ numpy
 sklearn
 dvc
 dvc[gdrive]
+pandas

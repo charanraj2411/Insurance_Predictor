@@ -1,6 +1,6 @@
 base:
   project: Insurance Predictor
-  random_state:42
+  random_state: 42
   target_col: expenses
 
 data_source:
