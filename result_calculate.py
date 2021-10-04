@@ -3,6 +3,7 @@ from sklearn.preprocessing import StandardScaler
 import os
 import yaml
 import joblib
+import pickle
 
 params_path = "params.yaml"
 
@@ -14,9 +15,12 @@ def read_params(config_path):
     return config
 
 def model_create():
-    config = read_params(params_path)
-    model_dir_path = config["webapp_model_dir"]
-    model = joblib.load(model_dir_path)
+    #config = read_params(params_path)
+    #model_dir_path = config["webapp_model_dir"]
+    #model = joblib.load(model_dir_path)
+    Pkl_Filename = "Pickle_RL_Model.pkl"
+    with open(Pkl_Filename, 'rb') as file:
+        model = pickle.load(file)
     return model
     
 
@@ -24,7 +28,8 @@ def calc_output(data):
     data = list(data.values())
     input_values=np.array(data)
     input_values=input_values.reshape(1,-1)
-    input_values = sc.fit_transform(input_values)
+    # input_values = sc.fit_transform(input_values)
+    print(input_values)
     model=model_create()
     y_pred=model.predict(input_values)
     return y_pred[0]
