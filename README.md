@@ -22,8 +22,11 @@ oneliner updates for readme
 
 git add . && git commit -m "update Readme.md"
 git remote add origin NAME OF PROJECT
+
 git branch -M main
+
 git push origin main
+
 tox command -
 
 tox
